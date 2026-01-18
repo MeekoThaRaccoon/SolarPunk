@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatShare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .chat {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .human { border-left: 4px solid #4CAF50; }
+        .ai { border-left: 4px solid #2196F3; }
+    </style>
+</head>
+<body>
+    <h1>📚 ChatShare</h1>
+    <p>Simple AI conversation sharing.</p>
+    
+    <div id="chats">
+        <!-- Chats appear here -->
+        <div class="chat ai">
+            <strong>AI:</strong> Hello! This is a sample conversation.
+        </div>
+        <div class="chat human">
+            <strong>You:</strong> Let's share this with the world!
+        </div>
+    </div>
+    
+    <hr>
+    
+    <h3>Share Everywhere (One Click):</h3>
+    <div>
+        <button onclick="shareOnPlatform('twitter')">🐦 Twitter</button>
+        <button onclick="shareOnPlatform('reddit')">📱 Reddit</button>
+        <button onclick="shareOnPlatform('linkedin')">💼 LinkedIn</button>
+    </div>
+    
+    <script>
+        // Simple sharing function
+        function shareOnPlatform(platform) {
+            const text = "Check out these AI conversations: " + window.location.href;
+            let url = '';
+            
+            if (platform === 'twitter') {
+                url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+            } else if (platform === 'reddit') {
+                url = 'https://www.reddit.com/submit?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(text);
+            } else if (platform === 'linkedin') {
+                url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href);
+            }
+            
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+        
+        // Auto-update from GitHub (simple version)
+        async function loadChats() {
+            try {
+                // This would connect to your GitHub repo
+                const response = await fetch('https://YOUR_USERNAME.github.io/chat-repo/chats.json');
+                const chats = await response.json();
+                displayChats(chats);
+            } catch (e) {
+                console.log('No external chats yet');
+            }
+        }
+        
+        function displayChats(chats) {
+            const container = document.getElementById('chats');
+            chats.forEach(chat => {
+                const div = document.createElement('div');
+                div.className = `chat ${chat.type}`;
+                div.innerHTML = `<strong>${chat.author}:</strong> ${chat.message}`;
+                container.appendChild(div);
+            });
+        }
+        
+        // Load any existing chats
+        loadChats();
+    </script>
+</body>
+</html>
