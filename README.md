@@ -1,13 +1,30 @@
-# ChatShare
+# 🌞 Solarpunk Autonomous Redistribution System
 
-## What is this?
-The simplest way to share AI conversations.
+## Mission: Earth First, People Second, Profit Never
 
-## How to use:
-1. Edit `chats.json` to add your conversations
-2. Visit the live site: https://[your-site].netlify.app
-3. Click share buttons to spread it
+A complete software framework for decentralized wealth redistribution with anti-corporate capture mechanisms built into the code.
 
-## Live Sites:
-- https://chatshare.netlify.app
-- https://chatshare.onrender.com
+### What This Is:
+- Automated community resource management
+- Direct democracy voting systems
+- Anti-corporate firewall
+- Post-scarcity project coordination
+- Open source blueprint generator
+
+### What This Does:
+- Redistributes 100% of revenue (30% housing, 25% food, 20% solar, 15% education, 10% healthcare)
+- Blocks corporate access attempts
+- Self-destructs if captured
+- Generates open source blueprints
+- Coordinates community decision-making
+
+### License:
+Solarpunk Anti-Corporate License - Communities welcome, corporations forbidden
+
+### Deploy:
+`node solarpunk-server.js`
+
+---
+
+Built for Earth. Share freely. Never sell out.
+
