@@ -1,0 +1,12 @@
+{
+"name": "solarpunk-redistribution",
+"version": "6.0.0",
+"description": "Earth First, People Second, Profit Never",
+"main": "solarpunk-server.js",
+"scripts": {
+"start": "node solarpunk-server.js"
+},
+"dependencies": {
+"express": "^4.18.2"
+}
+}
